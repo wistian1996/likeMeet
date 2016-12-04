@@ -1,13 +1,80 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".Fragments.AddAmigosEventoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerlista"
+        android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_below="@+id/view4"
+        android:layout_alignEnd="@+id/view5"
+        android:layout_above="@+id/view2" />
 
-</FrameLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent"
+        android:focusable="false"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/view4" />
+
+
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccent"
+        android:focusable="false"
+
+        android:id="@+id/view5"
+        android:layout_toEndOf="@+id/relativeLayout2"
+        android:layout_below="@+id/recyclerlista" />
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:padding="4dp"
+        android:id="@+id/relativeLayout2"
+        android:layout_above="@+id/button"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerlista2"
+            android:scrollbars="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+             />
+
+
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Concluir"
+        android:id="@+id/button"
+        android:textColor="@color/colorPrimary"
+        android:background="@drawable/fundo"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorAccent"
+        android:layout_above="@+id/relativeLayout2"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

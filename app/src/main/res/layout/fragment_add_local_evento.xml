@@ -10,11 +10,11 @@
 
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:text="Procurar local"
         android:background="@drawable/fundo"
         android:textColor="@color/colorPrimary"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="10dp"
 
 
         android:id="@+id/buttonLocal"

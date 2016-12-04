@@ -84,7 +84,7 @@ public class AddLocalEventoFragment extends Fragment {
                     } else {
                         editTextnome.setText("Não há o nome deste local");
                     }
-                    Snackbar.make(view, "Local adicionado", Snackbar.LENGTH_SHORT)
+                    Snackbar.make(view, "Local adicionado ", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
             }

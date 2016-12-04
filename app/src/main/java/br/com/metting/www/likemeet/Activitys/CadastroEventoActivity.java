@@ -79,6 +79,7 @@ public class CadastroEventoActivity extends AppCompatActivity {
         toolbar.setTitle("Novo evento");
         toolbar.setSubtitle("Adicionar informações");
 
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //botoes
