@@ -186,6 +186,8 @@ public class CadastroEventoActivity extends AppCompatActivity {
         return true;
     }
 
+
+
     //  a partir daqui sao opçoes do menu swep
     /////////////////////////////////////////
     public class PagerAdapter extends FragmentPagerAdapter {

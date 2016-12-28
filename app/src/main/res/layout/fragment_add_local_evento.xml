@@ -145,4 +145,13 @@
         </RelativeLayout>
     </ScrollView>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorAccent"
+        android:text="Use sua localização ou escolha um local."
+        android:id="@+id/textView4"
+        android:layout_above="@+id/buttonLocal"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

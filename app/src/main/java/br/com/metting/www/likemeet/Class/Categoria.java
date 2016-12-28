@@ -15,14 +15,14 @@ public class Categoria {
 
     }
 
-    public ArrayList<Categoria> getLista() {
+    public static ArrayList<Categoria> getLista() {
         Categoria c1 = new Categoria(1, "Festas");
         Categoria c2 = new Categoria(2, "Bares e boates");
         Categoria c3 = new Categoria(3, "Jogos");
         Categoria c4 = new Categoria(4, "Esportes");
         Categoria c5 = new Categoria(5, "Casuais");
         Categoria c6 = new Categoria(6, "Amigos");
-        Categoria c7 = new Categoria(7, "Outro");
+        Categoria c7 = new Categoria(7, "Trabalho , Escola");
 
         ArrayList<Categoria> list = new ArrayList<>();
         list.add(c1);

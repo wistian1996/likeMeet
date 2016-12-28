@@ -15,7 +15,8 @@ public class Amigo {
         this.nome = nome;
         this.tel = tel;
     }
-    public Amigo(){
+
+    public Amigo() {
 
     }
 
@@ -33,11 +34,12 @@ public class Amigo {
 
 
     public ArrayList<Amigo> getLista() {
-        Amigo a2 = new Amigo(1, "Franklin Wistian", "75999843408");
-        Amigo a3 = new Amigo(1, "Clevia lima", "75999843408");
-        Amigo a4 = new Amigo(1, "Alexandre Andrade", "75999843408");
-        Amigo a5 = new Amigo(1, "Elder Sales", "75999843408");
-        Amigo a6 = new Amigo(1, "Like a boss", "75999843408");
+        Amigo a2 = new Amigo(1, "Franklin Wistian", "75888445224");
+        Amigo a3 = new Amigo(2, "Clevia lima", "95874521565");
+        Amigo a4 = new Amigo(3, "Alexandre Andrade", "7854589655");
+        Amigo a5 = new Amigo(4, "Elder Sales", "9854215698");
+        Amigo a6 = new Amigo(5, "Like a boss", "1234567898");
+        Amigo a7 = new Amigo(6, "Josete", "7599854145");
 
         ArrayList<Amigo> list = new ArrayList<>();
         list.add(a2);
@@ -45,8 +47,27 @@ public class Amigo {
         list.add(a4);
         list.add(a5);
         list.add(a6);
+        list.add(a7);
         return list;
 
+    }
+
+    public Amigo getAmigoTel(String tel){
+        for (Amigo listaAmigo: getLista()) {
+            if (listaAmigo.getTel().equals(tel)){
+                return listaAmigo;
+            }
+        }
+        return null;
+    }
+
+    public  Amigo getAmigoId(int id){
+        for (Amigo listaAmigo: getLista()) {
+            if (listaAmigo.getId() == id){
+                return listaAmigo;
+            }
+        }
+        return null;
     }
 }
 

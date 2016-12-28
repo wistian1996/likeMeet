@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:padding="0.5dp"
     android:background="@color/colorAccent">
 
 
@@ -12,17 +13,22 @@
     <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/imageViewFoto"
         android:layout_gravity="center"
-        card_view:cardCornerRadius="0dp">
+        card_view:cardCornerRadius="0dp"
+    >
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             android:padding="2dp">
+
+
+
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:src="@drawable/iconperfill"
@@ -37,26 +43,6 @@
                 android:id="@id/imageViewFoto"
                 app:civ_border_color="#ff000000" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="75999843408"
-                android:id="@+id/textViewTel"
-                android:layout_below="@+id/textViewNome"
-                android:layout_alignStart="@+id/textViewNome" />
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
-                android:id="@+id/textViewNome"
-                android:layout_marginStart="4dp"
-                android:layout_alignParentTop="true"
-                android:layout_toEndOf="@id/imageViewFoto" />
-
             <CheckBox
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -64,7 +50,33 @@
                 android:layout_alignParentEnd="true"
                 android:checked="false"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentBottom="true" />
+                android:layout_alignBottom="@id/imageViewFoto" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/imageViewFoto">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Medium Text"
+                    android:id="@+id/textViewNome"
+                    android:layout_alignTop="@id/imageViewFoto"
+                    android:layout_toEndOf="@id/imageViewFoto" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="759242342234"
+                    android:id="@+id/textViewTel"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/imageViewFoto" />
+            </LinearLayout>
 
 
         </RelativeLayout>

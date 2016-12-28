@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.metting.www.likemeet.Fragments.ListaEventoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerlistaEventos"
+        android:scrollbars="vertical"
+        android:layout_width="400dp"
+        android:layout_height="250dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/relativeLayout8" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout8"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/horizontalScrollView3"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="6dp"
+                android:id="@+id/relativeLayout7"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/layoutList" >
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/imageView6"
+                    android:src="@drawable/marcador_amarelo"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/imageView7"
+                    android:src="@drawable/marcador_azul"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/textView30" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/imageView8"
+                    android:src="@drawable/marcador_preto"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/textView32" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:id="@+id/imageView9"
+                    android:src="@drawable/marcador_vermelho"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/textView34" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Varios eventos"
+                    android:id="@+id/textView30"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/imageView6" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Disponíveis"
+                    android:id="@+id/textView32"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/imageView7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Confirmados"
+                    android:id="@+id/textView34"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/imageView8" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eventos Hoje!"
+                    android:id="@+id/textView36"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/imageView9" />
+            </RelativeLayout>
+        </HorizontalScrollView>
+    </RelativeLayout>
+
+</RelativeLayout>
