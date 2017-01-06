@@ -2,71 +2,62 @@ package br.com.metting.www.likemeet.Activitys;
 
 import android.Manifest;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
-import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
+import android.view.View;
 
+import br.com.metting.www.likemeet.Fragments.CalendarioEventoFragment;
 import br.com.metting.www.likemeet.Fragments.ProcurarEventosMeetFragment;
 import br.com.metting.www.likemeet.R;
 
-public class MainActivity extends AppCompatActivity
-
-
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Toolbar toolbar;
     Fragment fragment;
     FloatingActionButton fab;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
-
         super.onCreate(savedInstanceState);
         createNoGpsDialog();
         setContentView(R.layout.activity_main);
-         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-         fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
 
         FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
         tx.replace(R.id.layoutPrincipal, new ProcurarEventosMeetFragment());
         tx.commit();
 
 
-
         fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                                   @Override
+                                   public void onClick(View view) {
                 /*
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();*/
-                Intent intent = new Intent(MainActivity.this, CadastroEventoActivity.class);
-                startActivity(intent);
+                                       Intent intent = new Intent(MainActivity.this, CadastroEventoActivity.class);
+                                       startActivity(intent);
 
-            }
-        }
+                                   }
+                               }
 
         );
 
@@ -96,16 +87,15 @@ public class MainActivity extends AppCompatActivity
         navigationView.setItemIconTintList(colorStateList);
 
 
-
         //check se a permissao de local ja foi concedida
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
         }
 
 
     }
 
- // verifica a resposta da requisicao de acesso a localizacao
+    // verifica a resposta da requisicao de acesso a localizacao
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
@@ -121,7 +111,7 @@ public class MainActivity extends AppCompatActivity
 
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
-                   this.finish();
+                    this.finish();
                 }
                 return;
             }
@@ -130,7 +120,9 @@ public class MainActivity extends AppCompatActivity
             // permissions this app might request
         }
     }
-DrawerLayout drawerLayout;
+
+    DrawerLayout drawerLayout;
+
     @Override
     public void onBackPressed() {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -143,9 +135,10 @@ DrawerLayout drawerLayout;
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     switch (which) {
-                        case DialogInterface.BUTTON_POSITIVE: finish();
+                        case DialogInterface.BUTTON_POSITIVE:
+                            finish();
 
-                        case  DialogInterface.BUTTON_NEGATIVE:
+                        case DialogInterface.BUTTON_NEGATIVE:
                     }
                 }
             };
@@ -156,7 +149,6 @@ DrawerLayout drawerLayout;
                     .create();
 
             mNoGpsDialog.show();
-
 
 
         }
@@ -183,16 +175,18 @@ DrawerLayout drawerLayout;
 
         return super.onOptionsItemSelected(item);
     }
-// verifica se o gps esta ligado
-    private void createNoGpsDialog(){
+
+    // verifica se o gps esta ligado
+    private void createNoGpsDialog() {
         String provider = Settings.Secure.getString(getContentResolver(),
                 Settings.Secure.LOCATION_PROVIDERS_ALLOWED);
 
-        if(provider.length() != 0)
-        {return;}
+        if (provider.length() != 0) {
+            return;
+        }
 
 
-     //   Se vier null ou length == 0
+        //   Se vier null ou length == 0
         DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -225,7 +219,7 @@ DrawerLayout drawerLayout;
 
             toolbar.setSubtitle("Encontrar novos eventos");
             fab.setVisibility(View.INVISIBLE);
-                fragment = new ProcurarEventosMeetFragment();
+            fragment = new ProcurarEventosMeetFragment();
             android.support.v4.app.FragmentTransaction fragmentTrasaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTrasaction.replace(R.id.layoutPrincipal, fragment);
@@ -237,6 +231,11 @@ DrawerLayout drawerLayout;
 
         } else if (id == R.id.nav_agenda) {
             toolbar.setSubtitle("Minha agenda");
+            fragment = new CalendarioEventoFragment();
+            android.support.v4.app.FragmentTransaction fragmentTrasaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTrasaction.replace(R.id.layoutPrincipal, fragment);
+            fragmentTrasaction.commit();
 
         } else if (id == R.id.nav_chat) {
             toolbar.setSubtitle("Chat");

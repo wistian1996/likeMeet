@@ -28,15 +28,11 @@ public class ProcurarEventosMeetFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_procurar_eventos_meet, container, false);
-
         // para usar um fragmento dentro de um fragmento e necessario usar o getchildfragment manager
-
         fragmentManager = getChildFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.layoutMaps, new MapsFragmentProcurarEventos(), "MapsFragmentProcurarEventos");
         fragmentTransaction.commitAllowingStateLoss();
-
-
 
         Fragment fr = new ListaEventoFragment();
         FragmentManager fm = getFragmentManager();

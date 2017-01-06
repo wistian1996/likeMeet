@@ -67,15 +67,12 @@ public class MapsFragmentProcurarEventos extends SupportMapFragment implements O
     @Override
     public void onCreate(Bundle savedInstanceState) {
         getMapAsync(this);
-
         super.onCreate(savedInstanceState);
 
     }
 
 
-    // executar alguma acao ao clicar em alguma area do meu mapa
-
-
+    //executar alguma acao ao clicar em alguma area do meu mapa
     //sera executado quando o mapa estiver pronto
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -102,14 +99,12 @@ public class MapsFragmentProcurarEventos extends SupportMapFragment implements O
                         fragmentTrasaction.replace(R.id.LayoutBaixoMap, fragment);
                         fragmentTrasaction.commit();
                     }
-
                 }
             });
             mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                 @Override
                 public boolean onMarkerClick(Marker marker) {// Inflate the layout for this fragment
                     chamarFragmentListaEventos(Evento.getListaEventosLatLong(marker.getPosition()));
-
                     // Se ela retorna falso, então o comportamento padrão irá ocorrer em adição ao seu comportamento personalizado
                     return false;
                 }
@@ -120,7 +115,6 @@ public class MapsFragmentProcurarEventos extends SupportMapFragment implements O
                 public void onMapClick(LatLng latLng) {
                     // se a lista for null entao ele retorna todos eventos
                     chamarFragmentListaEventos(null);
-
                 }
             });
         } catch (SecurityException e) {
@@ -131,7 +125,6 @@ public class MapsFragmentProcurarEventos extends SupportMapFragment implements O
     }
 
     private void chamarFragmentListaEventos(ArrayList<Evento> lista) {
-
 
         // se a lista nao for nula , retornara todos eventos
         if (lista == null) {
@@ -214,12 +207,7 @@ public class MapsFragmentProcurarEventos extends SupportMapFragment implements O
                     marker.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE));
 
                     mMap.addMarker(marker);
-
-
                 }
-
-
-
             }
         }
     }

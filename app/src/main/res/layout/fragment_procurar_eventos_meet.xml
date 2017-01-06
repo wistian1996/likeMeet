@@ -5,7 +5,6 @@
     tools:context="br.com.metting.www.likemeet.Fragments.ProcurarEventosMeetFragment">
 
     <!-- TODO: Update blank fragment layout -->
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,18 +12,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true">
 
-
-
-
         <RelativeLayout
-
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:id="@+id/layoutMaps"
             android:layout_below="@+id/SplitLine_hor1"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true">
-
         </RelativeLayout>
 
         <SearchView
@@ -44,7 +38,6 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:queryHint="Procurar" />
-
         </SearchView>
 
         <View
@@ -54,7 +47,6 @@
             android:background="@color/colorAccent"
             android:layout_alignBottom="@+id/searchView3"
             android:layout_alignParentStart="true" />
-
 
     </RelativeLayout>
 
